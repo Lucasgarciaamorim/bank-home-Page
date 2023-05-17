@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box, Center, Input, Button, Text } from '@chakra-ui/react'
+import Layout from './components/Layout/Layout'
+import { login } from './services/login';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Layout>
+        <Box boxShadow={'Dark lg'} backgroundColor={'#ffff'} borderRadius={'10'} flex={'grid'}>
+          <Center>
+            <Text fontSize='30px' color='#9413dc'>
+              Faça o Login
+            </Text>
+
+          </Center>
+          <Center flexDirection={"column"} width={'md'}>
+            <Input type='email' placeholder='Email' size='md' w={'80%'} />
+            <Input type='password' placeholder='Senha' size='md' w={'80%'} mt={'15'} />
+          </Center>
+          <Center>
+            <Button onClick={login} colorScheme='teal' size='md' width={'80%'} mt='10' mb='5'  >
+              Button
+            </Button>
+          </Center>
+
+        </Box>
+
+      </Layout>
+
+
+
+    </>
+
   );
 }
 
